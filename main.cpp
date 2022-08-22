@@ -6,6 +6,5 @@ int main(){
 
     Sistema.Executar();
     
-
     return 0;
-}
+} 

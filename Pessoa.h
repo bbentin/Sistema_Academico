@@ -1,14 +1,15 @@
 #ifndef _PESSOA_H_
 #define _PESSOA_H_
 #include "Datas.h"
-#include <cstring>
-using namespace std;
+#include "Universidade.h"
+
 class Pessoa{
 
 private:
     char nome[30];
     int idade;
     Datas Nascimento;
+    Universidade* Univ_Filiada;
 public:
 
 Pessoa();
@@ -21,6 +22,9 @@ void setIdade(int age);
 unsigned short int getIdade();
 const char* getNome();
 void Calc_Idade(Datas Atual);
+void InformaDados();
+void setUniv(Universidade Uni);
+Universidade* getUniv();
 };
 
 #endif

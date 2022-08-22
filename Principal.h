@@ -5,7 +5,9 @@
 class Principal{
 private:
     Datas Atual;
-    Pessoa Bruno, Gabriela;
+    Pessoa Bruno, Gabriela, Mainha;
+    Universidade UTFPR, IFPR, UFPR;
+
 public:
 
 Principal();
@@ -13,6 +15,5 @@ Principal();
 void Executar();
 
 };
-
 
 #endif
