@@ -1,6 +1,8 @@
 #ifndef _UNIVERSIDADE_H_
 #define _UNIVERSIDADE_H_
 #include <cstring>
+#include "Departamento.h"
+
 class Universidade{
 private:
 

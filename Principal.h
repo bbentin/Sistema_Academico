@@ -7,6 +7,7 @@ private:
     Datas Atual;
     Pessoa Bruno, Gabriela, Mainha;
     Universidade UTFPR, IFPR, UFPR;
+    Departamento DAINF,PRAE,PG;
 
 public:
 

@@ -10,6 +10,7 @@ private:
     int idade;
     Datas Nascimento;
     Universidade* Univ_Filiada;
+    Departamento* Dpto_Filiado;
 public:
 
 Pessoa();
@@ -19,12 +20,15 @@ Pessoa(unsigned short int d, unsigned short  int m, unsigned short int a, const 
 
 void setNome(const char* nome);
 void setIdade(int age);
-unsigned short int getIdade();
-const char* getNome();
 void Calc_Idade(Datas Atual);
 void InformaDados();
 void setUniv(Universidade Uni);
+void setDpto(Departamento* Dpto);
+Departamento* getDpto();
 Universidade* getUniv();
+const char* getNome();
+unsigned short int getIdade();
+
 };
 
 #endif
