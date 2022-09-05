@@ -4,25 +4,23 @@ Pessoa::Pessoa(){
     Nascimento.setDia(1);
     Nascimento.setMes(1);
     Nascimento.setAno(2000);
-    std::strcpy(nome,"Fulan");
-    Univ_Filiada = nullptr;         Dpto_Filiado = nullptr;
+    std::strcpy(nome,"Fulan");         id = cont_id;       cont_id++;
 }
-Pessoa::Pessoa(unsigned short int d, unsigned short int m, unsigned short int a){
+Pessoa::Pessoa(unsigned short int d, unsigned short int m, unsigned short int a, int i){
     Nascimento.setDia(d);
     Nascimento.setMes(m);
     Nascimento.setAno(a);
-    std::strcpy(nome,"Fulan");
-    Univ_Filiada = nullptr;         Dpto_Filiado = nullptr;
+    std::strcpy(nome,"Fulan");        id = i;         cont_id++;
     
 }
-Pessoa::Pessoa(unsigned short int d, unsigned short int m, unsigned short int a, const char* name){
+Pessoa::Pessoa(unsigned short int d, unsigned short int m, unsigned short int a, int i, const char* name){
     Nascimento.setDia(d);
     Nascimento.setMes(m);
     Nascimento.setAno(a);
-    std::strcpy(nome,name);
-    Univ_Filiada = nullptr;         Dpto_Filiado = nullptr;
+    std::strcpy(nome,name);        id = i;         cont_id++;
 }
 Pessoa::~Pessoa(){
+    cont_id--;
 }
 
 void Pessoa::setIdade(int age){
@@ -57,22 +55,8 @@ unsigned short int Pessoa::getIdade(){
 }
 
 void Pessoa::InformaDados(){
-   std:: cout<<"Nome:"<<nome<<std::endl<<"Idade:"<<idade<<std::endl<<"Estuda em:"<<Univ_Filiada->getNome()<<std::endl
-   <<"Filiado ao Departamento:"<<Dpto_Filiado->getNome()<<endl<<endl;
+   std:: cout<<"Nome:"<<nome<<std::endl<<"Idade:"<<idade<<std::endl;
 }
 
-void Pessoa::setUniv(Universidade Uni){
-    Univ_Filiada = &Uni;
-}
 
-Universidade* Pessoa::getUniv(){
-    return Univ_Filiada;
-}
-
-void Pessoa::setDpto(Departamento* Dpto){
-    Dpto_Filiado = Dpto;
-}
-
-Departamento* Pessoa::getDpto(){
-    return Dpto_Filiado;
-}
+int Pessoa::cont_id = 0;

@@ -1,6 +1,7 @@
 #ifndef _DATAS_H_
 #define _DATAS_H_
 #include <iostream>
+using namespace std;
 
 class Datas{
 private:
