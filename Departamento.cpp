@@ -3,6 +3,7 @@
 Departamento::Departamento():nome(""),Univ_Pertencente(nullptr),Disciplinas(this){
 }
 Departamento::~Departamento(){
+    Disciplinas.LimpaLista();
 }
 Departamento::Departamento(const char* name){
     strcpy(nome,name);      Univ_Pertencente = nullptr; 

@@ -6,22 +6,13 @@ ListaDisciplinas::ListaDisciplinas(Departamento* Associ){
     Associado = Associ; pPrimeiro = nullptr; pAtual = nullptr;  cont_disci = 0;
 }
 ListaDisciplinas::~ListaDisciplinas(){
-
-ObjetoDisciplina* paux = pPrimeiro;
-ObjetoDisciplina* paux1 = nullptr;
-
-    while (paux != nullptr){
-        paux1 = paux->getProx();
-        delete paux;
-        paux = paux1;
-    }
-    
+    LimpaLista();
 }
 
 void ListaDisciplinas::addDisci(Disciplina* inserida){
 
-ObjetoDisciplina* paux = nullptr;
-paux = new ObjetoDisciplina(inserida);
+ElementoDisciplina* paux = nullptr;
+paux = new ElementoDisciplina(inserida);
     
     if(paux != nullptr){
         if(pPrimeiro == nullptr){
@@ -39,20 +30,69 @@ void ListaDisciplinas::setDpto(Departamento* Dpto){
     Associado = Dpto;
 }
 
-ObjetoDisciplina* ListaDisciplinas::getPrimeiro(){
+ElementoDisciplina* ListaDisciplinas::getPrimeiro(){
     return pPrimeiro;
 }
 
-ObjetoDisciplina* ListaDisciplinas::getAtual(){
+ElementoDisciplina* ListaDisciplinas::getAtual(){
     return pAtual;
 }
 
 void ListaDisciplinas::Liste(){
 
-ObjetoDisciplina* paux = pPrimeiro;
+ElementoDisciplina* paux = pPrimeiro;
     
-    while(paux != nullptr){
-        cout<<paux->getDisci()->getNome()<<endl;
+    while(paux != pAtual->getProx()){
+        cout<<"     Disciplina: "<<paux->getDisci()->getNome()<<endl;
         paux = paux->getProx();
     }
+    cout<<endl<<endl;
+}
+
+void ListaDisciplinas::GravarDisciplinas(){
+
+    ofstream GravadorDisciplinas("Disciplinas.txt",ios::out);
+
+    if(!GravadorDisciplinas){
+        cerr<<"Arquivo nao encontrado"<<endl;
+        fflush(stdin);      getchar();      return;
+    }
+    else{
+        ElementoDisciplina* pElemento = pPrimeiro;
+        Disciplina* pDisci = nullptr;
+        while(pElemento != nullptr){
+            pDisci = pElemento->getDisci();
+            GravadorDisciplinas<<pDisci->getNome()<<"espaco    "
+                                <<pDisci->getDpto()<<endl;
+            pElemento = pElemento->getProx();
+        }
+    }
+}
+
+void ListaDisciplinas::LimpaLista(){
+    ElementoDisciplina* paux = pPrimeiro;
+
+    while(pPrimeiro != nullptr){
+        paux = pPrimeiro->getProx();
+        delete pPrimeiro;
+        pPrimeiro = paux;
+    }
+    
+}
+
+Disciplina* ListaDisciplinas::localizarDisci(char* name){
+    
+ElementoDisciplina* paux = pPrimeiro;
+
+    if (name != nullptr){
+        if(!strcmp(paux->getDisci()->getNome(),name)){return paux->getDisci();}
+        while (paux != pAtual->getProx()){
+            if(!strcmp(paux->getDisci()->getNome(),name)){
+                return paux->getDisci();
+            }
+            paux = paux->getProx();
+        }
+       
+    }
+    return nullptr;
 }

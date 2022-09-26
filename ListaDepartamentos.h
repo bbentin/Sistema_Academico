@@ -1,11 +1,11 @@
 #ifndef _LISTADEPARTAMENTOS_H_
 #define _LISTADEPARTAMENTOS_H_
-#include "ObjDepartamento.h"
+#include "ElementoDepartamento.h"
 
 class ListaDepartamentos{
 private:
-    ObjDepartamento* pPrimeiro;
-    ObjDepartamento* pAtual;
+    ElementoDepartamento* pPrimeiro;
+    ElementoDepartamento* pAtual;
     Universidade* Associada;
     int qtdDptos;
 
@@ -17,10 +17,13 @@ public:
 
 void addDpto(Departamento* inserido);
 void setUni(Universidade* assoc);
-Universidade* getUni();
-ObjDepartamento* getPrimeiro();
-ObjDepartamento* getUltimo();
 void Liste();
+void GraveDepartamentos();
+void LimpaLista();
+Departamento* LocalizarDpto(const char* nome);
+Universidade* getUni();
+ElementoDepartamento* getPrimeiro();
+ElementoDepartamento* getUltimo();
 };
 
 #endif

@@ -1,6 +1,7 @@
 #ifndef _ALUNO_H_
 #define _ALUNO_H_
 #include "Pessoa.h"
+#include <fstream>
 class Universidade;
 
 class Aluno: public Pessoa{

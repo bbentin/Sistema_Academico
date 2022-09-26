@@ -1,12 +1,12 @@
 #ifndef _LISTAALUNOS_H_
 #define _LISTAALUNOS_H_
-#include "ObjetoAluno.h"
+#include "ElementoAluno.h"
 class Disciplina;
 
 class ListaAlunos{
 private:
-    ObjetoAluno* pPrim;
-    ObjetoAluno* pAtual;
+    ElementoAluno* pPrim;
+    ElementoAluno* pAtual;
     Disciplina* Associada;
 public:
     
@@ -17,9 +17,12 @@ public:
 void addAluno(Aluno* add);
 void setDisci(Disciplina* asso);
 void Liste();
+void GraveAlunos();
+void LimpaLista();
 
-ObjetoAluno* getPrimeiro();
-ObjetoAluno* getAtual();
+Aluno* LocalizarAluno(char* name);
+ElementoAluno* getPrimeiro();
+ElementoAluno* getAtual();
 Disciplina* getDisci();
 
 };

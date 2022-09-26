@@ -71,7 +71,7 @@
 				"${fileDirname}\\**.cpp",
 				"${fileDirname}\\**.h",
 				"-o",
-				"${fileDirname}\\Programa.exe"
+				"${fileDirname}\\Universidade.exe"
 			],
 			"options": {
 				"cwd": "${fileDirname}"

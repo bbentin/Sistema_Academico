@@ -19,7 +19,6 @@ void setNome(char* name);
 void Liste();
 char* getNome();
 
-
 };
 
 

@@ -1,11 +1,11 @@
 #ifndef _LISTADISCIPLINAS_H_
 #define _LISTADISCIPLINAS_H_
-#include "ObjetoDisciplina.h"
+#include "ElementoDisciplina.h"
 
 class ListaDisciplinas{
 private:
-    ObjetoDisciplina* pPrimeiro;
-    ObjetoDisciplina* pAtual;
+    ElementoDisciplina* pPrimeiro;
+    ElementoDisciplina* pAtual;
     int cont_disci;
     Departamento* Associado;
 public:
@@ -16,9 +16,13 @@ public:
 
 void addDisci(Disciplina* inserida);
 void setDpto(Departamento* associ); 
-ObjetoDisciplina* getPrimeiro();
-ObjetoDisciplina* getAtual();
 void Liste();
+void GravarDisciplinas();
+void LimpaLista();
+ElementoDisciplina* getPrimeiro();
+ElementoDisciplina* getAtual();
+Disciplina* localizarDisci(char* nome);
+
 
 };
 

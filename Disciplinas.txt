@@ -1,0 +1,9 @@
+Matematicaespaco    0x7ffe6918fa20
+Psicologia da Educacaoespaco    0
+Tecnicas de Programacaoespaco    0x7ffe69191108
+Geoespaco    0x1001ff9e8
+Quimicaespaco    0x6
+Estrutura de Dados 1espaco    0x7ffe6918e780
+Estrutura de Dados 2espaco    0x7ffe6918fc00
+Educacaoespaco    0x90
+Mestradoespaco    0
